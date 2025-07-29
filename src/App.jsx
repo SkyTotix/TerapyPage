@@ -1,28 +1,39 @@
 import React from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Benefits from './components/Benefits'
-import Course from './components/Course'
-import Instructor from './components/Instructor'
-import Testimonials from './components/Testimonials'
-import Modules from './components/Modules'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Hero />
-      <About />
-      <Benefits />
-      <Course />
-      <Instructor />
-      <Testimonials />
-      <Modules />
-      <Contact />
-      <Footer />
+      <div style={{ 
+        minHeight: '100vh', 
+        background: 'linear-gradient(135deg, #0C5959 0%, #5A8C87 100%)',
+        color: 'white',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        padding: '2rem'
+      }}>
+        <div>
+          <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+            Sonoterapia Craneosacral®
+          </h1>
+          <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>
+            Método STCS® - Formación Profesional
+          </p>
+          <button style={{
+            padding: '1rem 2rem',
+            background: '#F27F3D',
+            color: 'white',
+            border: 'none',
+            borderRadius: '50px',
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+            cursor: 'pointer'
+          }}>
+            ¡Inscríbete Ahora!
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
