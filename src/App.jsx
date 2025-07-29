@@ -13,6 +13,7 @@ import Footer from './components/Footer'
 function App() {
   return (
     <div className="App">
+      {/* Landing page completa - Método Sonoterapia Craneosacral® */}
       <Header />
       <Hero />
       <About />
