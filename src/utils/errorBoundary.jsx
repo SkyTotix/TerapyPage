@@ -3,26 +3,20 @@ import React from 'react'
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { hasError: false, error: null, errorInfo: null }
+    this.state = { hasError: false }
   }
 
   static getDerivedStateFromError(error) {
-    // Actualizar el estado para que el siguiente render muestre la UI de fallback
+    console.error('Error caught by boundary:', error)
     return { hasError: true }
   }
 
   componentDidCatch(error, errorInfo) {
-    // Puedes registrar el error en un servicio de logging aquí
     console.error('Error caught by boundary:', error, errorInfo)
-    this.setState({
-      error: error,
-      errorInfo: errorInfo
-    })
   }
 
   render() {
     if (this.state.hasError) {
-      // Puedes renderizar cualquier UI de fallback
       return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-dark to-primary-medium text-white">
           <div className="text-center p-8">
@@ -34,22 +28,10 @@ class ErrorBoundary extends React.Component {
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="btn btn-accent"
+              className="px-6 py-3 bg-accent-orange text-white rounded-lg font-bold hover:bg-accent-red transition-colors"
             >
               Recargar Página
             </button>
-            {process.env.NODE_ENV === 'development' && this.state.error && (
-              <details className="mt-8 text-left">
-                <summary className="cursor-pointer font-bold">
-                  Detalles del Error (Solo Desarrollo)
-                </summary>
-                <pre className="mt-4 p-4 bg-black/20 rounded text-sm overflow-auto">
-                  {this.state.error && this.state.error.toString()}
-                  <br />
-                  {this.state.errorInfo.componentStack}
-                </pre>
-              </details>
-            )}
           </div>
         </div>
       )
