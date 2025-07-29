@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiQuote, FiChevronLeft, FiChevronRight, FiStar } from 'react-icons/fi'
+import { FiMessageSquare, FiChevronLeft, FiChevronRight, FiStar } from 'react-icons/fi'
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -70,7 +70,7 @@ const Testimonials = () => {
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl relative">
             {/* Quote icon */}
             <div className="absolute top-6 left-6 text-accent-orange opacity-20">
-              <FiQuote size={48} />
+              <FiMessageSquare size={48} />
             </div>
 
             <AnimatePresence mode="wait">
@@ -160,7 +160,7 @@ const Testimonials = () => {
             >
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-accent-orange to-accent-red rounded-full flex items-center justify-center text-white flex-shrink-0">
-                  <FiQuote />
+                  <FiMessageSquare />
                 </div>
                 <div className="flex-1">
                   <div className="flex mb-2">
