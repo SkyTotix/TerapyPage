@@ -1,8 +1,10 @@
 import React from 'react'
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <div style={{ 
         minHeight: '100vh', 
         background: 'linear-gradient(135deg, #0C5959 0%, #5A8C87 100%)',
